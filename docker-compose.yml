@@ -37,7 +37,7 @@ services:
       - 3000
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextjs.rule=Host(test.watershooters.in) || PathPrefix(/)"  # Change this to your domain
+      - "traefik.http.routers.nextjs.rule=Host(`test.watershooters.in`) || (PathPrefix(`/`))"
       - "traefik.http.routers.nextjs.entrypoints=websecure"
       - "traefik.http.routers.nextjs.tls.certresolver=myresolver"
       - "traefik.http.services.nextjs.loadbalancer.server.port=3000"
